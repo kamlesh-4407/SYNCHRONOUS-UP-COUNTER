@@ -26,6 +26,11 @@ Since the first (LSB) flip-flop needs to toggle at every clock pulse, its J and 
 The next flip-flop need only “recognize” that the first flip-flop’s Q output is high to be made ready to toggle, so no AND gate is needed.
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
+**Truth-Table**
+
+![image](https://github.com/user-attachments/assets/4ca0511d-455f-4597-9ce4-eb2c952157de)
+
+
 **Procedure**
 
 1. Type the program in Quartus software.
@@ -41,17 +46,15 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 **PROGRAM**
 
 ```
-Developed by:AISHWARIYA S RegisterNumber:24900840
-
-module exp11(out,clk,rstn);
-input clk,rstn;
+module ex11(out,clk,rst);
+input clk,rst;
 output reg [3:0]out;
 always @ (posedge clk)
-begin 
-	if(!rstn)
-		out<=0;
-	else
-		out <= out+1;
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out+1;
 end
 endmodule
 ```
@@ -61,16 +64,13 @@ RegisterNumber:24003690
 
 
 **RTL LOGIC UP COUNTER**
-![image](https://github.com/user-attachments/assets/2fc0c7eb-069a-44c6-a0b2-9543b7e7c68b)
+
+![image](https://github.com/user-attachments/assets/d2c4db6d-a343-4d44-8bf5-083733112c0f)
 
 
-**TIMING DIAGRAM FOR IP COUNTER**
-![396355021-99b5fe74-a743-4e8d-828d-e4f9b3ef2927](https://github.com/user-attachments/assets/5b2b3b76-9e72-49e7-ae0c-8302229b429a)
+**TIMING DIAGRAM FOR UP COUNTER**
 
-
-**TRUTH TABLE**
-
-![image](https://github.com/user-attachments/assets/35e8ac5e-f4e9-4507-9d05-8164961e7d01)
+![image](https://github.com/user-attachments/assets/8857e357-d045-4902-b015-dc16ba77a1e6)
 
 
 **RESULTS**
